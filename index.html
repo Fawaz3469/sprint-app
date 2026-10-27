@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>SPRINT: run hackathons with your friends</title>
+<meta name="description" content="SPRINT is a desktop app for macOS and Windows that keeps your friend group's hackathons, tasks, ideas and deadlines in one place. Works offline, syncs with your team.">
+<link rel="canonical" href="https://fawaz3469.github.io/sprint-app/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F9FB40">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="icon-512.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SPRINT">
+<meta property="og:title" content="SPRINT: run hackathons with your friends">
+<meta property="og:description" content="One desktop app for your team's hackathons, tasks, ideas and deadlines. macOS and Windows. Works offline.">
+<meta property="og:url" content="https://fawaz3469.github.io/sprint-app/">
+<meta property="og:image" content="https://fawaz3469.github.io/sprint-app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The SPRINT runner icon and wordmark on a yellow background">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SPRINT: run hackathons with your friends">
+<meta name="twitter:description" content="One desktop app for your team's hackathons, tasks, ideas and deadlines. macOS and Windows.">
+<meta name="twitter:image" content="https://fawaz3469.github.io/sprint-app/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SPRINT",
+  "description": "A desktop app for friend groups to run hackathons together: tasks, ideas, submission checklists, progress and deadlines in one place.",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "macOS, Windows",
+  "softwareVersion": "0.1.0",
+  "url": "https://fawaz3469.github.io/sprint-app/",
+  "image": "https://fawaz3469.github.io/sprint-app/og-image.png",
+  "downloadUrl": "https://github.com/Fawaz3469/sprint-app/releases/latest"
+}
+</script>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="./" aria-label="SPRINT home"><img src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></a>
+  <nav aria-label="Page">
+    <a href="#features">Features</a>
+    <a href="#install-help">Install help</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <img class="hero-icon" src="assets/sprint-icon.png" alt="" width="640" height="640">
+    <h1>Run hackathons with your friends.</h1>
+    <p class="lead">SPRINT keeps your team's hackathons, tasks, ideas and deadlines in one fast desktop app. It works offline and syncs when you're back.</p>
+
+    <div class="downloads" id="downloads">
+      <a class="btn btn-lg" id="dl-mac" data-os="mac" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_universal.dmg">
+        <span class="btn-title">Download for macOS</span>
+        <span class="btn-sub">Apple silicon and Intel · .dmg</span>
+      </a>
+      <a class="btn btn-lg" id="dl-win" data-os="win" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64-setup.exe">
+        <span class="btn-title">Download for Windows</span>
+        <span class="btn-sub">Windows 10 and 11 · .exe</span>
+      </a>
+    </div>
+    <p class="meta"><span id="version">Version 0.1.0</span> · <a id="all-releases" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/latest">All downloads</a> · <a id="dl-msi" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64_en-US.msi">Windows .msi</a></p>
+    <p class="note" id="mobile-note" hidden>SPRINT is a desktop app. Open this page on your Mac or PC to download it.</p>
+
+    <details class="signin">
+      <summary class="btn btn-ghost">Sign in</summary>
+      <p>Open the SPRINT app to sign in. Accounts are created inside the app with an email code.</p>
+    </details>
+  </section>
+
+  <section id="features" class="features" aria-labelledby="features-h">
+    <h2 id="features-h">Built for the team behind the submission</h2>
+    <ul>
+      <li>
+        <span class="num" aria-hidden="true">1</span>
+        <h3>Paste a link, skip the typing</h3>
+        <p>Drop in a Devpost or Unstop page and SPRINT fills in the name, dates and link for you.</p>
+      </li>
+      <li>
+        <span class="num" aria-hidden="true">2</span>
+        <h3>One board for everything</h3>
+        <p>Tasks on a drag-and-drop board, ideas the team votes on, and a submission checklist so nothing is forgotten.</p>
+      </li>
+      <li>
+        <span class="num" aria-hidden="true">3</span>
+        <h3>See who is where</h3>
+        <p>A progress ring, an honest health label (on track, at risk, blocked) and a quick status from each teammate.</p>
+      </li>
+      <li>
+        <span class="num" aria-hidden="true">4</span>
+        <h3>Works offline, stays in sync</h3>
+        <p>Edit on a train or a bad Wi-Fi. Changes sync with your teammates when you reconnect. Join a team with a short invite code.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="install-help" class="help" aria-labelledby="help-h">
+    <h2 id="help-h">Install help</h2>
+    <p>SPRINT is not code-signed yet, so your computer shows a warning the first time. It is safe to continue.</p>
+    <div class="help-grid">
+      <div>
+        <h3>macOS</h3>
+        <ol>
+          <li>Open the <code>.dmg</code> and drag SPRINT into Applications.</li>
+          <li>Right-click (or Control-click) SPRINT and choose <strong>Open</strong>, then <strong>Open</strong> again.</li>
+          <li>If you only see "Move to Bin": open <strong>System Settings, Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Windows</h3>
+        <ol>
+          <li>Run the installer.</li>
+          <li>On "Windows protected your PC", click <strong>More info</strong>.</li>
+          <li>Click <strong>Run anyway</strong>.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <a class="brand" href="./" aria-label="SPRINT home"><img src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></a>
+  <p>Made for friend groups who ship. © 2026 SPRINT.</p>
+  <p><a rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases">Releases</a></p>
+</footer>
+</body>
+</html>

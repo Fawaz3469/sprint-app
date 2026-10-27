@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fawaz3469.github.io/sprint-app/sitemap.xml

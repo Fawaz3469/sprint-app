@@ -1,0 +1,31 @@
+// Detects the visitor's system and, when GitHub answers, upgrades the links to the newest release.
+// Without JavaScript the page still works: both buttons link to the release listed in the HTML.
+(function () {
+  var ua = navigator.userAgent || '';
+  var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+  var mobile = /Android|iPhone|iPad|iPod/i.test(ua) || (/Mac/.test(platform) && navigator.maxTouchPoints > 1);
+  var os = mobile ? null : /Win/i.test(platform + ua) ? 'win' : /Mac/i.test(platform + ua) ? 'mac' : null;
+
+  var box = document.getElementById('downloads');
+  if (os) {
+    box.classList.add('detected');
+    var yours = box.querySelector('[data-os="' + os + '"]');
+    if (yours) yours.classList.add('is-yours');
+  }
+  if (mobile) document.getElementById('mobile-note').hidden = false;
+
+  fetch('https://api.github.com/repos/Fawaz3469/sprint-app/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (rel) {
+      var find = function (re) {
+        var a = (rel.assets || []).filter(function (x) { return re.test(x.name); })[0];
+        return a && a.browser_download_url;
+      };
+      var set = function (id, url) { if (url && url.indexOf('https://github.com/Fawaz3469/sprint-app/') === 0) document.getElementById(id).href = url; };
+      set('dl-mac', find(/\.dmg$/));
+      set('dl-win', find(/setup\.exe$/) || find(/\.exe$/));
+      set('dl-msi', find(/\.msi$/));
+      document.getElementById('version').textContent = 'Version ' + String(rel.tag_name || '').replace(/^v/, '');
+    })
+    .catch(function () {});
+})();
