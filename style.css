@@ -34,9 +34,9 @@ a { color: inherit; }
 .lockup-word img { height: var(--lh); width: auto; border-radius: 6px; }
 /* On the yellow bar the wordmark file's own yellow padding is trimmed away with CSS (glyphs: 627x79 at 54,50 of 720x154),
    so the letters, not the invisible box, line up with the icon. */
-.lockup.trim { --lh: 36px; }
-.lockup.trim .lockup-word { position: relative; overflow: hidden; width: calc(var(--lh) * 7.9367); height: var(--lh); }
-.lockup.trim .lockup-word img { position: absolute; max-width: none; height: auto; width: calc(var(--lh) * 9.1139); left: calc(var(--lh) * -0.6835); top: calc(var(--lh) * -0.6329); border-radius: 0; }
+.lockup.trim { --lh: 36px; --wh: 22px; }
+.lockup.trim .lockup-word { position: relative; overflow: hidden; width: calc(var(--wh) * 7.9367); height: var(--wh); }
+.lockup.trim .lockup-word img { position: absolute; max-width: none; height: auto; width: calc(var(--wh) * 9.1139); left: calc(var(--wh) * -0.6835); top: calc(var(--wh) * -0.6329); border-radius: 0; }
 .lockup.trim .lockup-icon { box-shadow: 0 0 0 2px #000; }
 
 .nav { position: sticky; top: 0; z-index: 20; background: #F9F940; /* the exact yellow inside the logo files, so the wordmark has no seam on the bar */ color: var(--on-yellow); }
@@ -161,7 +161,7 @@ code { font: .85em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; bac
 @media (max-width: 720px) {
   :root { --pad: 20px; --nav-h: 64px; --section: 72px; }
   body { font-size: 1.125rem; }
-  .lockup.trim { --lh: 20px; gap: 10px; flex-shrink: 0; }
+  .lockup.trim { --lh: 26px; --wh: 14px; gap: 10px; flex-shrink: 0; }
   .nav-in { gap: 12px; }
   .nav nav { gap: 14px; font-size: .875rem; white-space: nowrap; }
   .nl-features { display: none; }
