@@ -30,7 +30,7 @@
 
   // Newest release: links and SHA-256 values come from release.json in this repository.
   var OFFICIAL = 'https://github.com/Fawaz3469/sprint-app/releases/';
-  fetch(new URL('release.json', document.querySelector('script[src$="app.js"]').src), { cache: 'no-cache' })
+  fetch(new URL('release.json', document.querySelector('script[src*="app.js"]').src), { cache: 'no-cache' })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (rel) {
       ['mac', 'win', 'msi'].forEach(function (k) {

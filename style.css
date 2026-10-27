@@ -11,7 +11,7 @@
   --glow: .22;
   --shadow: 0 40px 100px rgba(0, 0, 0, .5);
   --pad: 48px;
-  --nav-h: 80px;
+  --nav-h: 72px;
   --section: 140px;
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
 }
@@ -34,9 +34,12 @@ a { color: inherit; }
 .lockup-word img { height: var(--lh); width: auto; border-radius: 6px; }
 /* On the yellow bar the wordmark file's own yellow padding is trimmed away with CSS (glyphs: 627x79 at 54,50 of 720x154),
    so the letters, not the invisible box, line up with the icon. */
-.lockup.trim { --lh: 36px; --wh: 22px; }
-.lockup.trim .lockup-word { position: relative; overflow: hidden; width: calc(var(--wh) * 7.9367); height: var(--wh); }
-.lockup.trim .lockup-word img { position: absolute; max-width: none; height: auto; width: calc(var(--wh) * 9.1139); left: calc(var(--wh) * -0.6835); top: calc(var(--wh) * -0.6329); border-radius: 0; }
+/* Nav lockup: icon 44x44, wordmark 22px tall with width:auto (the file is 720x154, so about 103px wide), 12px apart, one center line.
+   The file has built-in yellow padding (50px above the letters, 25px below, of 154), so the image is nudged up inside its
+   22px box with CSS only; the box itself stays centered with the icon. */
+.lockup.trim { --lh: 44px; --wh: 22px; gap: 12px; }
+.lockup.trim .lockup-word { display: block; height: var(--wh); overflow: hidden; line-height: 0; }
+.lockup.trim .lockup-word img { display: block; height: var(--wh); width: auto; max-width: none; object-fit: contain; border-radius: 0; position: relative; top: calc(var(--wh) * -0.0812); }
 .lockup.trim .lockup-icon { box-shadow: 0 0 0 2px #000; }
 
 .nav { position: sticky; top: 0; z-index: 20; background: #F9F940; /* the exact yellow inside the logo files, so the wordmark has no seam on the bar */ color: var(--on-yellow); }
@@ -161,7 +164,6 @@ code { font: .85em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; bac
 @media (max-width: 720px) {
   :root { --pad: 20px; --nav-h: 64px; --section: 72px; }
   body { font-size: 1.125rem; }
-  .lockup.trim { --lh: 26px; --wh: 14px; gap: 10px; flex-shrink: 0; }
   .nav-in { gap: 12px; }
   .nav nav { gap: 14px; font-size: .875rem; white-space: nowrap; }
   .nl-features { display: none; }
@@ -184,6 +186,9 @@ code { font: .85em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; bac
   .doc { padding-top: 40px; padding-bottom: 72px; }
   .foot { padding: 40px var(--pad); }
   .foot-in { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .lockup.trim { --lh: 36px; --wh: 18px; flex-shrink: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
