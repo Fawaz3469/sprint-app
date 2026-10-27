@@ -1,19 +1,19 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.4",
   "date": "2026-10-27",
   "mac": {
     "name": "Sprint-macOS.dmg",
     "url": "https://github.com/Fawaz3469/sprint-app/releases/latest/download/Sprint-macOS.dmg",
-    "sha256": "dab190325e9f39200f4842b1c562a072e1bc8b76ddf2bf4360d3480c14215424"
+    "sha256": "c85848195e22d89b9801aecb2844b98486fc3be1f6163a6d8161a508e73fc786"
   },
   "win": {
     "name": "Sprint-Windows-setup.exe",
     "url": "https://github.com/Fawaz3469/sprint-app/releases/latest/download/Sprint-Windows-setup.exe",
-    "sha256": "022f8f89b1b69187992fe313a405d31af3409c89250cfb516e81aa137fc19840"
+    "sha256": "5a0db323bbadc46d414e31d8a814d01110cde4126bbae5b2fa212db170ceaac8"
   },
   "msi": {
     "name": "Sprint-Windows.msi",
     "url": "https://github.com/Fawaz3469/sprint-app/releases/latest/download/Sprint-Windows.msi",
-    "sha256": "3ddd9d3a0ddbd79cd1a117f08aaf32f3359cd43b71ccce820e475b7756dd54ef"
+    "sha256": "b74340cf9c85de64bc9334fed557b1919aea3f7b85042190a0a825d6667c5373"
   }
 }
