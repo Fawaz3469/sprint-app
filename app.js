@@ -14,6 +14,11 @@
   }
   if (mobile) document.getElementById('mobile-note').hidden = false;
 
+  // The Sign in popover closes on Escape or a click elsewhere.
+  var pop = document.getElementById('signin');
+  document.addEventListener('click', function (e) { if (pop.open && !pop.contains(e.target)) pop.open = false; });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && pop.open) { pop.open = false; pop.querySelector('summary').focus(); } });
+
   fetch('https://api.github.com/repos/Fawaz3469/sprint-app/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (rel) {
@@ -25,7 +30,7 @@
       set('dl-mac', find(/\.dmg$/));
       set('dl-win', find(/setup\.exe$/) || find(/\.exe$/));
       set('dl-msi', find(/\.msi$/));
-      document.getElementById('version').textContent = 'Version ' + String(rel.tag_name || '').replace(/^v/, '');
+      document.getElementById('version').textContent = 'v' + String(rel.tag_name || '').replace(/^v/, '');
     })
     .catch(function () {});
 })();

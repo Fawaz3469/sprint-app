@@ -8,8 +8,8 @@
 <title>SPRINT: run hackathons with your friends</title>
 <meta name="description" content="SPRINT is a desktop app for macOS and Windows that keeps your friend group's hackathons, tasks, ideas and deadlines in one place. Works offline, syncs with your team.">
 <link rel="canonical" href="https://fawaz3469.github.io/sprint-app/">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#F9FB40">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0b0b0c">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="icon-512.png" type="image/png" sizes="512x512">
@@ -51,6 +51,10 @@
   <nav aria-label="Page">
     <a href="#features">Features</a>
     <a href="#install-help">Install help</a>
+    <details class="pop" id="signin">
+      <summary>Sign in</summary>
+      <div class="pop-panel" role="note">Open the SPRINT app to sign in.</div>
+    </details>
   </nav>
 </header>
 
@@ -63,44 +67,57 @@
     <div class="downloads" id="downloads">
       <a class="btn btn-lg" id="dl-mac" data-os="mac" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_universal.dmg">
         <span class="btn-title">Download for macOS</span>
-        <span class="btn-sub">Apple silicon and Intel · .dmg</span>
+        <span class="btn-sub">Apple silicon and Intel</span>
       </a>
       <a class="btn btn-lg" id="dl-win" data-os="win" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64-setup.exe">
         <span class="btn-title">Download for Windows</span>
-        <span class="btn-sub">Windows 10 and 11 · .exe</span>
+        <span class="btn-sub">64-bit installer</span>
       </a>
     </div>
-    <p class="meta"><span id="version">Version 0.1.0</span> · <a id="all-releases" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/latest">All downloads</a> · <a id="dl-msi" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64_en-US.msi">Windows .msi</a></p>
+    <p class="meta"><span id="version">v0.1.0</span> · macOS 11+ · Windows 10/11</p>
     <p class="note" id="mobile-note" hidden>SPRINT is a desktop app. Open this page on your Mac or PC to download it.</p>
-
-    <details class="signin">
-      <summary class="btn btn-ghost">Sign in</summary>
-      <p>Open the SPRINT app to sign in. Accounts are created inside the app with an email code.</p>
+    <details class="more">
+      <summary>Other downloads</summary>
+      <ul>
+        <li><a id="dl-msi" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64_en-US.msi">Windows installer (.msi)</a></li>
+        <li><a id="notes" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/latest">Release notes</a></li>
+        <li><a rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases">All releases</a></li>
+      </ul>
     </details>
+
+    <div class="shots">
+      <input class="shot-radio" type="radio" name="shot" id="shot-overview" checked>
+      <input class="shot-radio" type="radio" name="shot" id="shot-standup">
+      <div class="shot-tabs" role="group" aria-label="Screenshots">
+        <label for="shot-overview">Overview</label>
+        <label for="shot-standup">Standup</label>
+      </div>
+      <div class="window">
+        <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img class="shot shot-overview" src="assets/app-overview.webp" width="1600" height="812" alt="The SPRINT app showing a hackathon overview: a progress ring at 15 percent, an on-track health label, the event dates and the team and task counts.">
+        <img class="shot shot-standup" src="assets/app-standup.webp" width="1600" height="812" alt="The SPRINT Standup tab listing three teammates, each with a status, a short note, tasks done and a progress percentage." loading="lazy">
+      </div>
+      <p class="shot-note">Demo data.</p>
+    </div>
   </section>
 
   <section id="features" class="features" aria-labelledby="features-h">
     <h2 id="features-h">Built for the team behind the submission</h2>
     <ul>
       <li>
-        <span class="num" aria-hidden="true">1</span>
-        <h3>Paste a link, skip the typing</h3>
-        <p>Drop in a Devpost or Unstop page and SPRINT fills in the name, dates and link for you.</p>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>Teams</h3>
+        <p>Paste a link and SPRINT fills in the hackathon. Share tasks, ideas and a submission checklist, and invite friends with a short code.</p>
       </li>
       <li>
-        <span class="num" aria-hidden="true">2</span>
-        <h3>One board for everything</h3>
-        <p>Tasks on a drag-and-drop board, ideas the team votes on, and a submission checklist so nothing is forgotten.</p>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" opacity=".3"/><path d="M12 3a9 9 0 0 1 9 9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg></span>
+        <h3>Progress</h3>
+        <p>A progress ring, an honest health label (on track, at risk, blocked) and a quick standup so everyone sees where the team is.</p>
       </li>
       <li>
-        <span class="num" aria-hidden="true">3</span>
-        <h3>See who is where</h3>
-        <p>A progress ring, an honest health label (on track, at risk, blocked) and a quick status from each teammate.</p>
-      </li>
-      <li>
-        <span class="num" aria-hidden="true">4</span>
-        <h3>Works offline, stays in sync</h3>
-        <p>Edit on a train or a bad Wi-Fi. Changes sync with your teammates when you reconnect. Join a team with a short invite code.</p>
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/><path d="M5 12.859a10 10 0 0 1 5.17-2.69"/><path d="M19 12.859a10 10 0 0 0-2.007-1.523"/><path d="M2 8.82a15 15 0 0 1 4.177-2.643"/><path d="M22 8.82a15 15 0 0 0-11.288-3.764"/><path d="m2 2 20 20"/></svg></span>
+        <h3>Works offline</h3>
+        <p>Keep working on a train or bad Wi-Fi. Your changes sync with teammates as soon as you reconnect.</p>
       </li>
     </ul>
   </section>
