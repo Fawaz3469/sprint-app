@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>SPRINT: run hackathons with your friends</title>
 <meta name="description" content="SPRINT is a desktop app for macOS and Windows that keeps your friend group's hackathons, tasks, ideas and deadlines in one place. Works offline, syncs with your team.">
 <link rel="canonical" href="https://fawaz3469.github.io/sprint-app/">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#0b0b0c">
+<meta name="theme-color" content="#F9FB40">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="icon-512.png" type="image/png" sizes="512x512">
@@ -17,15 +17,15 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SPRINT">
 <meta property="og:title" content="SPRINT: run hackathons with your friends">
-<meta property="og:description" content="One desktop app for your team's hackathons, tasks, ideas and deadlines. macOS and Windows. Works offline.">
+<meta property="og:description" content="SPRINT is a desktop app for macOS and Windows that keeps your friend group's hackathons, tasks, ideas and deadlines in one place. Works offline, syncs with your team.">
 <meta property="og:url" content="https://fawaz3469.github.io/sprint-app/">
 <meta property="og:image" content="https://fawaz3469.github.io/sprint-app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The SPRINT runner icon and wordmark on a yellow background">
+<meta property="og:image:alt" content="The SPRINT running-man icon and wordmark on a dark background">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SPRINT: run hackathons with your friends">
-<meta name="twitter:description" content="One desktop app for your team's hackathons, tasks, ideas and deadlines. macOS and Windows.">
+<meta name="twitter:description" content="SPRINT is a desktop app for macOS and Windows that keeps your friend group's hackathons, tasks, ideas and deadlines in one place. Works offline, syncs with your team.">
 <meta name="twitter:image" content="https://fawaz3469.github.io/sprint-app/og-image.png">
 <script type="application/ld+json">
 {
@@ -48,48 +48,60 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav">
   <div class="nav-in">
-    <a class="lockup" href="./" aria-label="SPRINT home"><img class="lockup-icon" src="assets/sprint-icon-sm.png" alt="" width="128" height="128"><img class="lockup-word" src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></a>
+    <a class="lockup" href="" aria-label="SPRINT home"><img class="lockup-icon" src="assets/sprint-icon-sm.png" alt="" width="128" height="128"><img class="lockup-word" src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></a>
     <nav aria-label="Page">
       <a href="#features">Features</a>
       <a href="#install-help">Install help</a>
-      <details class="pop" id="signin">
-        <summary>Sign in</summary>
-        <div class="pop-panel" role="note">Open the SPRINT app to sign in. Accounts are created inside the app with an email code.</div>
-      </details>
     </nav>
   </div>
 </header>
 
 <main id="main">
   <section class="hero">
-    <img class="hero-icon" src="assets/sprint-icon.png" alt="" width="640" height="640">
-    <h1>Run hackathons with your friends.</h1>
-    <p class="lead">Tasks, ideas and deadlines for your whole team, in one fast desktop app.</p>
-
-    <div class="downloads" id="downloads">
-      <a class="btn" id="dl-mac" data-os="mac" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_universal.dmg">Download for macOS</a>
-      <a class="btn" id="dl-win" data-os="win" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64-setup.exe">Download for Windows</a>
+    <div class="hero-text">
+      <h1>Run hackathons with your friends.</h1>
+      <p class="lead">Tasks, ideas and deadlines for your whole team, in one fast desktop app.</p>
+      <div class="downloads" id="downloads">
+        <div class="dl">
+          <a class="btn" id="dl-mac" data-os="mac" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_universal.dmg">Download for macOS</a>
+          <p class="hash">SHA-256 <code id="h-mac" title="fe7708c4372dd57917264f7ff843966393e256d961eadf216d6270aa0fd80927">fe7708c4…0fd80927</code></p>
+        </div>
+        <div class="dl">
+          <a class="btn" id="dl-win" data-os="win" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64-setup.exe">Download for Windows</a>
+          <p class="hash">SHA-256 <code id="h-win" title="0c27ec183a17f226c5e59f44810eeecf139d4183ca8384eb6352f1f5550e7f88">0c27ec18…550e7f88</code></p>
+        </div>
+      </div>
+      <p class="meta"><span class="ver">v0.1.0</span> · macOS 11+ · Windows 10/11</p>
+      <p class="meta" id="mobile-note" hidden>SPRINT is a desktop app. Open this page on your Mac or PC to download it.</p>
+      <details class="more">
+        <summary>Other downloads</summary>
+        <ul>
+          <li><a id="dl-msi" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64_en-US.msi">Windows installer (.msi)</a></li>
+          <li><a rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/latest">Release notes</a></li>
+        </ul>
+      </details>
+      <details class="more verify">
+        <summary>Verify your download</summary>
+        <div class="verify-box">
+          <p>Compare the SHA-256 of the file you downloaded with these values.</p>
+          <dl>
+            <dt id="vn-mac">Sprint_0.1.0_universal.dmg</dt><dd><code id="v-mac">fe7708c4372dd57917264f7ff843966393e256d961eadf216d6270aa0fd80927</code></dd>
+            <dt id="vn-win">Sprint_0.1.0_x64-setup.exe</dt><dd><code id="v-win">0c27ec183a17f226c5e59f44810eeecf139d4183ca8384eb6352f1f5550e7f88</code></dd>
+            <dt id="vn-msi">Sprint_0.1.0_x64_en-US.msi</dt><dd><code id="v-msi">40f89d95b219e3879ad29ecf7b40930d95cf62e3c7dda0f127c900ae0b9bed03</code></dd>
+          </dl>
+          <p>macOS: <code>shasum -a 256 ~/Downloads/&lt;file&gt;</code><br>Windows: <code>certutil -hashfile &lt;file&gt; SHA256</code></p>
+        </div>
+      </details>
     </div>
-    <p class="meta"><span class="ver">v0.1.0</span> · macOS 11+ · Windows 10/11</p>
-    <p class="meta" id="mobile-note" hidden>SPRINT is a desktop app. Open this page on your Mac or PC to download it.</p>
-    <details class="more">
-      <summary>Other downloads</summary>
-      <ul>
-        <li><a id="dl-msi" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64_en-US.msi">Windows installer (.msi)</a></li>
-        <li><a rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/latest">Release notes</a></li>
-      </ul>
-    </details>
-  </section>
-
-  <section class="product" aria-labelledby="product-h">
-    <h2 id="product-h" class="reveal">One window for the whole hackathon.</h2>
-    <p class="sub reveal">Dates, tasks, progress and who is doing what. Always up to date, even offline.</p>
-    <figure class="window reveal">
+    <figure class="window hero-shot">
       <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
       <img src="assets/app-overview.webp" width="1600" height="812" alt="The SPRINT app showing a hackathon overview: a progress ring at 15 percent, an on-track health label, the event dates and the team's task counts.">
     </figure>
-    <h3 class="shot-title reveal">Standup, without the meeting.</h3>
-    <p class="sub reveal">Everyone sets a short status. You see progress per person at a glance.</p>
+  </section>
+
+  <section class="product" aria-labelledby="product-h">
+    <h2 id="product-h" class="reveal">Standup, without the meeting.</h2>
+    <p class="sub reveal">Everyone sets a short status. You see progress per person at a glance, even offline.</p>
     <figure class="window reveal">
       <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
       <img src="assets/app-standup.webp" width="1600" height="812" alt="The SPRINT Standup tab listing three teammates, each with a status, a short note, tasks done and a progress percentage." loading="lazy">
@@ -120,7 +132,7 @@
 
   <section id="install-help" class="help" aria-labelledby="help-h">
     <h2 id="help-h" class="reveal">Install help</h2>
-    <p class="sub reveal">SPRINT is not code-signed yet, so your computer shows a warning the first time. It is safe to continue.</p>
+    <p class="sub reveal">SPRINT is not code-signed yet, so your computer shows a warning the first time. It is safe to continue. You sign in inside the app: accounts are created there with an email code.</p>
     <div class="help-grid">
       <div class="reveal">
         <h3>macOS</h3>
@@ -139,14 +151,44 @@
         </ol>
       </div>
     </div>
+
+    <h2 id="uninstall" class="reveal sub-h">Uninstall</h2>
+    <p class="sub reveal">Removing the app and removing your data are separate steps.</p>
+    <div class="help-grid">
+      <div class="reveal">
+        <h3>macOS</h3>
+        <ol>
+          <li>Quit SPRINT, then drag it from Applications to the Bin.</li>
+          <li>To remove local data, delete the folders named <code>app.sprint.desktop</code> in <code>~/Library/Application Support</code>, <code>~/Library/Logs</code>, <code>~/Library/Caches</code> and <code>~/Library/WebKit</code>.</li>
+          <li>To remove your sign-in, open Keychain Access, search for <code>app.sprint.desktop</code> and delete the entries.</li>
+        </ol>
+      </div>
+      <div class="reveal">
+        <h3>Windows</h3>
+        <ol>
+          <li>Open Settings, Apps, Installed apps, find SPRINT and choose Uninstall.</li>
+          <li>To remove local data, delete the <code>app.sprint.desktop</code> folders in <code>%APPDATA%</code> and <code>%LOCALAPPDATA%</code>.</li>
+          <li>To remove your sign-in, open Credential Manager, Windows Credentials, and remove entries named <code>app.sprint.desktop</code>.</li>
+        </ol>
+      </div>
+    </div>
+    <p class="sub reveal left-note">Uninstalling does not delete your account or team data stored in the cloud. To have it deleted, email <strong>help.sprint7@gmail.com</strong> from the address you signed in with. See the <a href="privacy/">Privacy Policy</a>.</p>
   </section>
 </main>
-
 <footer class="foot">
   <div class="foot-in">
-    <a class="lockup" href="./" aria-label="SPRINT home"><img class="lockup-icon" src="assets/sprint-icon-sm.png" alt="" width="128" height="128"><img class="lockup-word" src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></a>
-    <p><span class="ver">v0.1.0</span> · <a href="#install-help">Install help</a></p>
+    <a class="lockup" href="" aria-label="SPRINT home"><img class="lockup-icon" src="assets/sprint-icon-sm.png" alt="" width="128" height="128"><img class="lockup-word" src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></a>
+    <nav aria-label="Footer">
+      <span class="ver">v0.1.0</span>
+      <a href="terms/">Terms</a>
+      <a href="privacy/">Privacy</a>
+      <a href="#install-help">Install help</a>
+    </nav>
+  </div>
+  <div class="foot-in foot-fine">
+    <p>© Mohammed Fawaz. All rights reserved. SPRINT is not affiliated with Devpost, Unstop or any hackathon organizer.</p>
   </div>
 </footer>
+<div class="deco deco-dots" aria-hidden="true"></div>
 </body>
 </html>

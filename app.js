@@ -8,12 +8,13 @@
   var os = mobile ? null : /Win/i.test(platform + ua) ? 'win' : /Mac/i.test(platform + ua) ? 'mac' : null;
 
   var box = document.getElementById('downloads');
-  if (os) {
+  if (os && box) {
     box.classList.add('detected');
     var yours = box.querySelector('[data-os="' + os + '"]');
     if (yours) yours.classList.add('is-yours');
   }
-  if (mobile) document.getElementById('mobile-note').hidden = false;
+  var note = document.getElementById('mobile-note');
+  if (mobile && note) note.hidden = false;
 
   // Fade-up on scroll (skipped entirely for reduced motion or without IntersectionObserver).
   var items = document.querySelectorAll('.reveal');
@@ -26,24 +27,23 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  // The Sign in popover closes on Escape or a click elsewhere.
-  var pop = document.getElementById('signin');
-  document.addEventListener('click', function (e) { if (pop.open && !pop.contains(e.target)) pop.open = false; });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && pop.open) { pop.open = false; pop.querySelector('summary').focus(); } });
-
-  fetch('https://api.github.com/repos/Fawaz3469/sprint-app/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+  // Newest release: links and SHA-256 checksums come from release.json in this same repository.
+  var OFFICIAL = 'https://github.com/Fawaz3469/sprint-app/releases/';
+  fetch(new URL('release.json', document.querySelector('script[src$="app.js"]').src), { cache: 'no-cache' })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (rel) {
-      var find = function (re) {
-        var a = (rel.assets || []).filter(function (x) { return re.test(x.name); })[0];
-        return a && a.browser_download_url;
+      var apply = function (key, link, hash, verify, name) {
+        var a = rel[key];
+        if (!document.getElementById(link) || !a || typeof a.url !== 'string' || a.url.indexOf(OFFICIAL) !== 0 || !/^[0-9a-f]{64}$/.test(a.sha256)) return;
+        document.getElementById(link).href = a.url;
+        if (hash) { var h = document.getElementById(hash); h.textContent = a.sha256.slice(0, 8) + '\u2026' + a.sha256.slice(-8); h.title = a.sha256; }
+        document.getElementById(verify).textContent = a.sha256;
+        document.getElementById(name).textContent = a.name;
       };
-      var set = function (id, url) { if (url && url.indexOf('https://github.com/Fawaz3469/sprint-app/') === 0) document.getElementById(id).href = url; };
-      set('dl-mac', find(/\.dmg$/));
-      set('dl-win', find(/setup\.exe$/) || find(/\.exe$/));
-      set('dl-msi', find(/\.msi$/));
-      var v = 'v' + String(rel.tag_name || '').replace(/^v/, '');
-      document.querySelectorAll('.ver').forEach(function (el) { el.textContent = v; });
+      apply('mac', 'dl-mac', 'h-mac', 'v-mac', 'vn-mac');
+      apply('win', 'dl-win', 'h-win', 'v-win', 'vn-win');
+      apply('msi', 'dl-msi', null, 'v-msi', 'vn-msi');
+      document.querySelectorAll('.ver').forEach(function (el) { el.textContent = 'v' + String(rel.version || '').replace(/^v/, ''); });
     })
     .catch(function () {});
 })();
