@@ -30,7 +30,13 @@
 
   // Newest release: links and SHA-256 values come from release.json in this repository.
   var OFFICIAL = 'https://github.com/Fawaz3469/sprint-app/releases/';
-  fetch(new URL('release.json', document.querySelector('script[src*="app.js"]').src), { cache: 'no-cache' })
+  // Values that can change are hidden (not removed) until release.json answers, so a stale
+  // built-in version or checksum never flashes. On failure or after 3 s the built-in values show.
+  var root = document.documentElement;
+  var reveal = function () { root.classList.add('rel-ready'); };
+  var ctl = window.AbortController ? new AbortController() : null;
+  var timer = setTimeout(function () { if (ctl) ctl.abort(); reveal(); }, 3000);
+  fetch(new URL('release.json', document.querySelector('script[src*="app.js"]').src), { cache: 'no-cache', signal: ctl ? ctl.signal : undefined })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (rel) {
       ['mac', 'win', 'msi'].forEach(function (k) {
@@ -40,7 +46,15 @@
         document.querySelectorAll('[data-full="' + k + '"]').forEach(function (el) { el.textContent = a.sha256; });
         document.querySelectorAll('[data-name="' + k + '"]').forEach(function (el) { el.textContent = a.name; });
       });
-      document.querySelectorAll('.ver').forEach(function (el) { el.textContent = 'v' + String(rel.version || '').replace(/^v/, ''); });
+      if (/^\d+\.\d+\.\d+/.test(String(rel.version))) {
+        document.querySelectorAll('.ver').forEach(function (el) { el.textContent = 'v' + String(rel.version).replace(/^v/, ''); });
+      }
+      var d = /^\d{4}-\d{2}-\d{2}$/.test(String(rel.date)) ? new Date(rel.date + 'T00:00:00Z') : null;
+      if (d && !isNaN(d)) {
+        var txt = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+        document.querySelectorAll('.reldate').forEach(function (el) { el.textContent = txt; });
+      }
     })
-    .catch(function () {});
+    .catch(function () {})
+    .then(function () { clearTimeout(timer); reveal(); });
 })();

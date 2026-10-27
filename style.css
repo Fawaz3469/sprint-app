@@ -121,7 +121,6 @@ code { font: .85em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; bac
 .foot nav a:hover { color: var(--text); text-decoration: underline; }
 .foot-fine { margin-top: 32px; flex-direction: column; align-items: flex-start; font-size: .9375rem; }
 .foot-fine p { margin: 0; max-width: 72ch; }
-.attrib a { text-decoration: underline; }
 
 /* Downloads page */
 .dl-head { padding: 96px 0 0; }
@@ -193,3 +192,6 @@ code { font: .85em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; bac
   .btn { transition: none; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* Version, date, names and checksums wait for release.json (no flash of an old value). */
+html.js:not(.rel-ready) .live { visibility: hidden; }
