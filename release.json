@@ -1,18 +1,18 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "mac": {
-    "name": "Sprint_0.1.1_universal.dmg",
-    "url": "https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.1/Sprint_0.1.1_universal.dmg",
-    "sha256": "3da5ebe52bccf32124e90b3c6c54c10508ba4b73568b647ccc83c8a05a7b2f3b"
+    "name": "Sprint_0.1.2_universal.dmg",
+    "url": "https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.2/Sprint_0.1.2_universal.dmg",
+    "sha256": "3da11c39dd52f5cd4885c7ca6db878956eac8be2566cfb03cb90dc6f1ae5cac5"
   },
   "win": {
-    "name": "Sprint_0.1.1_x64-setup.exe",
-    "url": "https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.1/Sprint_0.1.1_x64-setup.exe",
-    "sha256": "c4ac5c3a8b144ae1208c1d96f49612e1e9e7ecb0a8fbe5fb53e21ff875960c6a"
+    "name": "Sprint_0.1.2_x64-setup.exe",
+    "url": "https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.2/Sprint_0.1.2_x64-setup.exe",
+    "sha256": "95cd763e307acb9b20477bbd2f9219d80d72206223f8816fb36f9c94a6487c07"
   },
   "msi": {
-    "name": "Sprint_0.1.1_x64_en-US.msi",
-    "url": "https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.1/Sprint_0.1.1_x64_en-US.msi",
-    "sha256": "3385cf3996338ea581eaa2f2fb2e17fb9363d47ac442b5e77e8a0697a247707f"
+    "name": "Sprint_0.1.2_x64_en-US.msi",
+    "url": "https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.2/Sprint_0.1.2_x64_en-US.msi",
+    "sha256": "bd59becb5d0a6a3186add0da798048a6d794d8e6de042cdb8dc853c8e3ed1268"
   }
 }
