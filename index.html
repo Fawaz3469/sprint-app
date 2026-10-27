@@ -48,10 +48,11 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav">
   <div class="nav-in">
-    <a class="lockup" href="" aria-label="SPRINT home"><img class="lockup-icon" src="assets/sprint-icon-sm.png" alt="" width="128" height="128"><img class="lockup-word" src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></a>
+    <a class="lockup trim" href="./" aria-label="SPRINT home"><img class="lockup-icon" src="assets/sprint-icon-sm.png" alt="" width="128" height="128"><span class="lockup-word"><img src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></span></a>
     <nav aria-label="Page">
-      <a href="#features">Features</a>
+      <a class="nl-features" href="#features">Features</a>
       <a href="#install-help">Install help</a>
+      <a href="downloads/">Downloads</a>
     </nav>
   </div>
 </header>
@@ -61,52 +62,17 @@
     <div class="hero-text">
       <h1>Run hackathons with your friends.</h1>
       <p class="lead">Tasks, ideas and deadlines for your whole team, in one fast desktop app.</p>
-      <div class="downloads" id="downloads">
-        <div class="dl">
-          <a class="btn" id="dl-mac" data-os="mac" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_universal.dmg">Download for macOS</a>
-          <p class="hash">SHA-256 <code id="h-mac" title="fe7708c4372dd57917264f7ff843966393e256d961eadf216d6270aa0fd80927">fe7708c4…0fd80927</code></p>
+      <div class="downloads">
+          <a class="btn" data-dl="mac" data-os="mac" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_universal.dmg">Download for macOS</a>
+          <a class="btn" data-dl="win" data-os="win" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64-setup.exe">Download for Windows</a>
         </div>
-        <div class="dl">
-          <a class="btn" id="dl-win" data-os="win" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64-setup.exe">Download for Windows</a>
-          <p class="hash">SHA-256 <code id="h-win" title="0c27ec183a17f226c5e59f44810eeecf139d4183ca8384eb6352f1f5550e7f88">0c27ec18…550e7f88</code></p>
-        </div>
-      </div>
-      <p class="meta"><span class="ver">v0.1.0</span> · macOS 11+ · Windows 10/11</p>
+      <p class="meta"><span class="ver">v0.1.0</span> · macOS 11+ · Windows 10/11 · <a class="verify-link" href="#verify">Verify your download</a></p>
       <p class="meta" id="mobile-note" hidden>SPRINT is a desktop app. Open this page on your Mac or PC to download it.</p>
-      <details class="more">
-        <summary>Other downloads</summary>
-        <ul>
-          <li><a id="dl-msi" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64_en-US.msi">Windows installer (.msi)</a></li>
-          <li><a rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/latest">Release notes</a></li>
-        </ul>
-      </details>
-      <details class="more verify">
-        <summary>Verify your download</summary>
-        <div class="verify-box">
-          <p>Compare the SHA-256 of the file you downloaded with these values.</p>
-          <dl>
-            <dt id="vn-mac">Sprint_0.1.0_universal.dmg</dt><dd><code id="v-mac">fe7708c4372dd57917264f7ff843966393e256d961eadf216d6270aa0fd80927</code></dd>
-            <dt id="vn-win">Sprint_0.1.0_x64-setup.exe</dt><dd><code id="v-win">0c27ec183a17f226c5e59f44810eeecf139d4183ca8384eb6352f1f5550e7f88</code></dd>
-            <dt id="vn-msi">Sprint_0.1.0_x64_en-US.msi</dt><dd><code id="v-msi">40f89d95b219e3879ad29ecf7b40930d95cf62e3c7dda0f127c900ae0b9bed03</code></dd>
-          </dl>
-          <p>macOS: <code>shasum -a 256 ~/Downloads/&lt;file&gt;</code><br>Windows: <code>certutil -hashfile &lt;file&gt; SHA256</code></p>
-        </div>
-      </details>
     </div>
     <figure class="window hero-shot">
       <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-      <img src="assets/app-overview.webp" width="1600" height="812" alt="The SPRINT app showing a hackathon overview: a progress ring at 15 percent, an on-track health label, the event dates and the team's task counts.">
+      <img src="assets/app-overview.webp" width="1800" height="1145" alt="The SPRINT app showing a hackathon overview: a progress ring at 15 percent, an on-track health label, the event dates and the team's task counts.">
     </figure>
-  </section>
-
-  <section class="product" aria-labelledby="product-h">
-    <h2 id="product-h" class="reveal">Standup, without the meeting.</h2>
-    <p class="sub reveal">Everyone sets a short status. You see progress per person at a glance, even offline.</p>
-    <figure class="window reveal">
-      <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-      <img src="assets/app-standup.webp" width="1600" height="812" alt="The SPRINT Standup tab listing three teammates, each with a status, a short note, tasks done and a progress percentage." loading="lazy">
-    </figure>
-    <p class="fine">Demo data.</p>
   </section>
 
   <section id="features" class="features" aria-labelledby="features-h">
@@ -128,6 +94,16 @@
         <p>Keep working on a train or bad Wi-Fi. Changes sync with your teammates as soon as you reconnect.</p>
       </li>
     </ul>
+  </section>
+
+  <section class="product" aria-labelledby="product-h">
+    <h2 id="product-h" class="reveal">Standup, without the meeting.</h2>
+    <p class="sub reveal">Everyone sets a short status. You see progress per person at a glance, even offline.</p>
+    <figure class="window reveal">
+      <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <img src="assets/app-standup.webp" width="1800" height="1145" alt="The SPRINT Standup tab listing three teammates, each with a status, a short note, tasks done and a progress percentage." loading="lazy">
+    </figure>
+    <p class="fine">Demo data.</p>
   </section>
 
   <section id="install-help" class="help" aria-labelledby="help-h">
@@ -174,12 +150,35 @@
     </div>
     <p class="sub reveal left-note">Uninstalling does not delete your account or team data stored in the cloud. To have it deleted, email <strong>help.sprint7@gmail.com</strong> from the address you signed in with. See the <a href="privacy/">Privacy Policy</a>.</p>
   </section>
+
+  <section id="verify" class="verify" aria-labelledby="verify-h">
+    <h2 id="verify-h" class="reveal">Verify your download.</h2>
+    <p class="sub reveal">Compare the SHA-256 of the file you downloaded with these values. If they differ, do not install it.</p>
+    <div class="vgrid">
+<div class="vrow reveal"><h3>macOS</h3><p data-name="mac">Sprint_0.1.0_universal.dmg</p><code data-full="mac">fe7708c4372dd57917264f7ff843966393e256d961eadf216d6270aa0fd80927</code></div>
+<div class="vrow reveal"><h3>Windows</h3><p data-name="win">Sprint_0.1.0_x64-setup.exe</p><code data-full="win">0c27ec183a17f226c5e59f44810eeecf139d4183ca8384eb6352f1f5550e7f88</code></div>
+<div class="vrow reveal"><h3>Windows (.msi)</h3><p data-name="msi">Sprint_0.1.0_x64_en-US.msi</p><code data-full="msi">40f89d95b219e3879ad29ecf7b40930d95cf62e3c7dda0f127c900ae0b9bed03</code></div>
+    </div>
+    <p class="sub">macOS: <code>shasum -a 256 ~/Downloads/&lt;file&gt;</code><br>Windows: <code>certutil -hashfile &lt;file&gt; SHA256</code></p>
+  </section>
 </main>
+
+<section class="band" aria-labelledby="band-h">
+  <div class="band-in">
+    <h2 id="band-h">Get SPRINT.</h2>
+    <p class="band-sub"><span class="ver">v0.1.0</span> · macOS 11+ · Windows 10/11</p>
+    <div class="downloads">
+          <a class="btn" data-dl="mac" data-os="mac" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_universal.dmg">Download for macOS</a>
+          <a class="btn" data-dl="win" data-os="win" rel="noopener noreferrer" href="https://github.com/Fawaz3469/sprint-app/releases/download/v0.1.0/Sprint_0.1.0_x64-setup.exe">Download for Windows</a>
+        </div>
+  </div>
+</section>
 <footer class="foot">
   <div class="foot-in">
-    <a class="lockup" href="" aria-label="SPRINT home"><img class="lockup-icon" src="assets/sprint-icon-sm.png" alt="" width="128" height="128"><img class="lockup-word" src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></a>
+    <a class="lockup" href="./" aria-label="SPRINT home"><img class="lockup-icon" src="assets/sprint-icon-sm.png" alt="" width="128" height="128"><span class="lockup-word"><img src="assets/sprint-wordmark.png" alt="SPRINT" width="720" height="154"></span></a>
     <nav aria-label="Footer">
       <span class="ver">v0.1.0</span>
+      <a href="downloads/">Downloads</a>
       <a href="terms/">Terms</a>
       <a href="privacy/">Privacy</a>
       <a href="#install-help">Install help</a>
@@ -189,6 +188,5 @@
     <p>© Mohammed Fawaz. All rights reserved. SPRINT is not affiliated with Devpost, Unstop or any hackathon organizer.</p>
   </div>
 </footer>
-<div class="deco deco-dots" aria-hidden="true"></div>
 </body>
 </html>
