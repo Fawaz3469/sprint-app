@@ -1,6 +1,6 @@
-# Where the legal drafts come from
+# Where the legal text comes from
 
-DRAFT, not legal advice. The Terms and Privacy pages are original plain-English text, structured and adapted from two open sources. No company's proprietary policy text was used, and Automattic's documents (CC BY-SA) were not used.
+The Terms and Privacy pages are original plain-English text, structured and adapted from two open sources. No company's proprietary policy text was used, and Automattic's documents (CC BY-SA) were not used.
 
 | Page / section | Source |
 |---|---|

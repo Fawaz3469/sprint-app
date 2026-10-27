@@ -149,8 +149,6 @@ code { font: .85em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; bac
 .doc a { text-decoration: underline; text-underline-offset: 3px; }
 .doc li { margin-bottom: 8px; }
 .doc .fine { margin: 0 0 32px; }
-.draft { background: var(--yellow); color: var(--on-yellow) !important; padding: 14px 18px; border-radius: 14px; margin: 0 0 32px; font-size: 1rem !important; }
-.draft strong { color: var(--on-yellow); }
 
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .js .reveal.in { opacity: 1; transform: none; }
